@@ -43,6 +43,7 @@ __meta__ = {
 
 [node name="Flappy" type="AnimatedSprite" parent="Flappy"]
 frames = SubResource( 1 )
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="Flappy/Flappy"]
@@ -91,8 +92,8 @@ script = ExtResource( 9 )
 margin_right = 135.0
 margin_bottom = 36.0
 rect_scale = Vector2( 1.51349, 1.66928 )
-custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "Score"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -104,8 +105,8 @@ margin_top = -4.24263
 margin_right = 270.517
 margin_bottom = 70.7574
 rect_scale = Vector2( 1.44944, 1.94184 )
-custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
 text = "0
 "
 __meta__ = {
