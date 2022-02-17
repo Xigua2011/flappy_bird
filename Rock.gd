@@ -18,5 +18,8 @@ func _ready():
 
 func _on_Rock_area_entered(area):
 	Globals.points = 0
+	$plane_crash.play()
+	get_tree().paused = true
+	yield(get_tree().create_timer(1.0), "timeout")
+	get_tree().paused = false
 	get_tree().reload_current_scene()
-
