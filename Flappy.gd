@@ -15,13 +15,19 @@ func _ready():
 func _process(delta):
 	position += velocity * delta
 	if Input.is_action_just_pressed("up"):
-		velocity.y += -450
+		jump()
 	velocity.y += delta * 500
 	if position.y > 600:
 		velocity.y = -100
 	if position.y < 0:
 		velocity.y = 100
 
+func _input(event):
+	if event is InputEventScreenTouch && event.is_pressed():
+		jump()
+
+func jump():
+	velocity.y += -450
 
 func _on_Star_area_entered(area):
 	print("star area: ", area)
