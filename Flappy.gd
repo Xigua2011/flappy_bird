@@ -5,7 +5,7 @@ var points = 0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var velocity = Vector2(80,0)
+var velocity = Vector2(60 + min(Globals.level, 5)*20,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -21,7 +21,14 @@ func _process(delta):
 		velocity.y = -100
 	if position.y < 0:
 		velocity.y = 100
-
+	if position.x > 2000:
+		Globals.level += 1
+		get_tree().change_scene("res://end.tscn")
+		
+	#if position.x < 2000:
+	#	Globals.level = 1
+	#Globals.level = round(position.x / 1000)
+	
 #func _input(event):
 #	if event is InputEventScreenTouch && event.is_pressed():
 #		jump()

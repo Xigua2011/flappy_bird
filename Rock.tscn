@@ -6,6 +6,7 @@
 
 [node name="Rock" type="Area2D"]
 position = Vector2( 510.531, 479.418 )
+collision_layer = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

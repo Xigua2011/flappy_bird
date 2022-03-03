@@ -1,11 +1,4 @@
-extends Node
-
-var points = 0
-var level = 1
-
-func add_point():
-	points += 1
-	print("points ",points)
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -15,9 +8,13 @@ func add_point():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Label.text = "LEVEL "+str(Globals.level)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Level.tscn")

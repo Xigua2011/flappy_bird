@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://end.gd" type="Script" id=2]
+
+[node name="end" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 411.0
+margin_top = 275.0
+margin_right = 581.0
+margin_bottom = 311.0
+custom_fonts/font = ExtResource( 1 )
+text = "THE END"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

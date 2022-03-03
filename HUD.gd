@@ -14,3 +14,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Score.text = str(Globals.points)
+	$Level.text = str(Globals.level)
