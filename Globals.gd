@@ -1,6 +1,7 @@
 extends Node
 
 var points = 0
+var lastlevelpoints = 0
 var level = 1
 
 func add_point():

@@ -39,6 +39,7 @@ texture = ExtResource( 7 )
 
 [node name="Flappy" type="Area2D" parent="."]
 position = Vector2( 56, 272 )
+scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -46,7 +47,7 @@ __meta__ = {
 
 [node name="Flappy" type="AnimatedSprite" parent="Flappy"]
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="Flappy/Flappy"]

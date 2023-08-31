@@ -7,6 +7,7 @@ extends Node2D
 
 var Rock = preload("res://Rock.tscn")
 var Star = preload("res://Star.tscn")
+var Powerup = preload("res://Powerup.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,8 +16,10 @@ func _ready():
 	for i in range(300, 2000, 150):
 		var rock = Rock.instance()
 		var star = Star.instance()
+		
 		rock.position.x = i
 		star.position.x = i
+		
 		
 		rock.scale.y = rand_range(1.0, min(0.75+Globals.level/4.0, 2.0))
 		
@@ -26,12 +29,18 @@ func _ready():
 			#rock.rotation_degrees = 180
 			rock.position.y = 120
 			star.position.y = rand_range(300,600)
+			
 		else:
 			star.position.y = rand_range(0,300)
 		get_node("/root/Level/Rocks").add_child(rock)
 		get_node("/root/Level/Stars").add_child(star)
+		
 	
-
+	for i in range(5):
+		var powerup = Powerup.instance()
+		powerup.position.x = rand_range(300,2000)
+		powerup.position.y = rand_range(0,600)
+		get_node("/root/Level/Stars").add_child(powerup)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

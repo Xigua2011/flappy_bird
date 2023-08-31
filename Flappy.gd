@@ -23,6 +23,7 @@ func _process(delta):
 		velocity.y = 100
 	if position.x > 2000:
 		Globals.level += 1
+		Globals.lastlevelpoints = Globals.points
 		get_tree().change_scene("res://end.tscn")
 		
 	#if position.x < 2000:
@@ -40,6 +41,7 @@ func _on_Star_area_entered(area):
 	print("star area: ", area)
 	points += 1
 	print("points ",points)
+
 
 
 func _on_TouchScreenButton_pressed():
